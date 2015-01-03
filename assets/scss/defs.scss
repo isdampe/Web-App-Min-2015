@@ -4,5 +4,5 @@
 
 //Breakpoint for responsive design breaks.
 @mixin breakpoint($point) {
-  @media ($point) { @content; }
+  @media (max-width: $point) { @content; }
 }
