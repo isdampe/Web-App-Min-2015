@@ -1,0 +1,22 @@
+.old-browser {
+
+	position:fixed;
+	z-index:9999;
+	top:0;
+	background:#000;
+	opacity:0.75;
+	-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
+	filter:alpha(opacity=75);
+	-moz-opacity:0.75;
+	-khtml-opacity:0.75;
+	text-align:center;
+	color:#ccc;
+	width:100%;
+	font-size:13px;
+	padding:1em 0;
+	
+	a {
+		color:#D9B217;
+	}
+
+}

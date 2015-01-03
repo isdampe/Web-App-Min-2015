@@ -1,0 +1,6 @@
+##Usage
+
+```
+./install
+./launch
+```

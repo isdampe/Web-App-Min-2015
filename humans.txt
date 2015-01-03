@@ -1,0 +1,16 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Richard Denton - @isdampe
+
+# THANKS
+
+    W3C, SASS, jQuery, Grunt, Bower, Github.com
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3, SASS
+    Normalize.css, jQuery, HTML5shiv.js
+    Respond.js, Grunt, Bower
