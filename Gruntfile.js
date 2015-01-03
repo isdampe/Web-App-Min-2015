@@ -24,7 +24,7 @@ module.exports = function(grunt) {
         separator: ';'
       },
       dist: {
-        src: ['assets/bower/jquery/dist/jquery.min.js', 'assets/js/src/app.js'],
+        src: ['assets/bower/jquery/dist/jquery.js', 'assets/js/src/app.js'],
         dest: 'assets/js/concat/app.js'
       }
     },
