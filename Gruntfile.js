@@ -2,29 +2,27 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-
-    //Compile all of our SASS.
-    libsass: {
-      options: {
-        loadPath: ['assets/scss'],
-        outputStyle: 'compressed'
-      },
-      files: {
-        expand: true,
-        cwd: 'assets/scss/',
-        src: ['*.scss'],
-        dest: 'assets/css',
-        ext: '.css'
+    
+    //Compile our SASS
+    sass: {
+      dist: {
+        options: {
+          style: 'compressed'
+        },
+        files: {
+          'assets/css/global-noprefix.css': 'assets/scss/global.scss'
+        }
       }
     },
 
     //Concat files.
     concat: {
       options: {
-        separator: ';'
+        separator: ';',
+        sourceMap: true
       },
       dist: {
-        src: ['assets/bower/jquery/dist/jquery.js', 'assets/js/src/app.js'],
+        src: ['assets/js/vendor/jquery-1.12.4.min.js', 'assets/js/src/app.js'],
         dest: 'assets/js/concat/app.js'
       }
     },
@@ -32,6 +30,10 @@ module.exports = function(grunt) {
     //Minify JS.
     uglify: {
       js: {
+        options: {
+          sourceMap: true,
+          sourceMapIn: 'assets/js/concat/app.js.map'
+        },
         files: {
           'assets/js/build/app.min.js': ['<%= concat.dist.dest %>']
         }
@@ -41,7 +43,8 @@ module.exports = function(grunt) {
     //Configure autoprefixer
     autoprefixer: {
       options: {
-        browsers: ['last 50 versions', 'ie 6', 'ie 7', 'ie 8', 'ie 9']
+        browsers: ['last 50 versions', 'ie 6', 'ie 7', 'ie 8', 'ie 9'],
+        map: true
       },
       dist: {
         files: {
@@ -54,7 +57,7 @@ module.exports = function(grunt) {
     watch: {
       scss: {
         files: 'assets/scss/*.scss',
-        tasks: ['libsass', 'autoprefixer'],
+        tasks: ['sass', 'autoprefixer'],
         options: {
           debounceDelay: 100,
         },
@@ -80,9 +83,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-libsass-e');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-autoprefixer');
 
-  grunt.registerTask('default', ['concat', 'uglify', 'libsass', 'autoprefixer']);
+  grunt.registerTask('default', ['concat', 'uglify', 'sass', 'autoprefixer']);
 
 };
