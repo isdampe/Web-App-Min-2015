@@ -56,7 +56,7 @@ module.exports = function(grunt) {
     //Configure watch
     watch: {
       scss: {
-        files: 'assets/scss/*.scss',
+        files: ['assets/scss/*.scss', 'assets/scss/*/*.scss'],
         tasks: ['sass', 'autoprefixer'],
         options: {
           debounceDelay: 100,
