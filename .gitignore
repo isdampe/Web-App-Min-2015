@@ -1,4 +1,5 @@
 node_modules/*
+.sass-cache/*
 assets/bower/*
 assets/css/*
 assets/js/concat/*
