@@ -1,12 +1,28 @@
 {
-  "name": "WebAppMin2015",
-  "version": "0.3.0",
-  "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-contrib-uglify": "*",
-    "grunt-contrib-watch": "*",
-    "grunt-contrib-concat": "*",
-    "grunt-autoprefixer": "*",
-    "grunt-contrib-sass": "*"
-  }
+  "name": "WebAppMin",
+  "version": "0.3.1",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+		"gulp-sass": "3.1.0",
+		"gulp-sourcemaps": "2.6.0",
+		"gulp-browserify": "0.5.1",
+		"gulp-autoprefixer": "4.0.0",
+		"http-server": "0.10.0",
+		"jquery": "*"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isdampe/tillingtimber-frontend.git"
+  },
+  "author": "isdampe",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/isdampe/tillingtimber-frontend/issues"
+  },
+  "homepage": "https://github.com/isdampe/tillingtimber-frontend#readme"
 }
