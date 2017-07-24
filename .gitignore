@@ -2,6 +2,7 @@ node_modules/*
 .sass-cache/*
 assets/bower/*
 assets/css/*
+assets/js/dist/*
 assets/js/concat/*
 assets/js/build/*
 assets/js/scss/.sass-cache/*

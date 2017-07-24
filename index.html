@@ -22,10 +22,11 @@
 
 	<!--Dev only-->
 	<link rel="stylesheet" href="assets/css/dev.css">
-	<link rel="stylesheet" href="assets/css/dist/global.css">
+
+	<link rel="stylesheet" href="assets/css/global.css">
 	<!--[if lt IE 10]>
 	<link rel="stylesheet" href="assets/css/legacy.css">
-	<script src="assets/js/vendor/html5shiv-respond-flex.min.js"></script>
+	<script src="assets/js/dist/polyfill.js"></script>
 	<![endif]-->
 </head>
 <body>
@@ -45,22 +46,10 @@
 		ga('create', 'UA-XXXXX-X', 'auto');
 		ga('send', 'pageview');
 	</script>
-	<!--
-	 ███████╗██╗   ██╗ █████╗ ███████╗██╗██╗   ██╗███████╗               
-	 ██╔════╝██║   ██║██╔══██╗██╔════╝██║██║   ██║██╔════╝               
-	 █████╗  ██║   ██║███████║███████╗██║██║   ██║█████╗                 
-	 ██╔══╝  ╚██╗ ██╔╝██╔══██║╚════██║██║╚██╗ ██╔╝██╔══╝                 
-	 ███████╗ ╚████╔╝ ██║  ██║███████║██║ ╚████╔╝ ███████╗               
-	 ╚══════╝  ╚═══╝  ╚═╝  ╚═╝╚══════╝╚═╝  ╚═══╝  ╚══════╝               
-	                                                                     
-	 ███████╗ ██████╗ ███████╗████████╗██╗    ██╗ █████╗ ██████╗ ███████╗
-	 ██╔════╝██╔═══██╗██╔════╝╚══██╔══╝██║    ██║██╔══██╗██╔══██╗██╔════╝
-	 ███████╗██║   ██║█████╗     ██║   ██║ █╗ ██║███████║██████╔╝█████╗  
-	 ╚════██║██║   ██║██╔══╝     ██║   ██║███╗██║██╔══██║██╔══██╗██╔══╝  
-	 ███████║╚██████╔╝██║        ██║   ╚███╔███╔╝██║  ██║██║  ██║███████╗
-	 ╚══════╝ ╚═════╝ ╚═╝        ╚═╝    ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
-	-->
-	<script src="assets/js/vendor/livejs.js"></script>
-	<script src="assets/js/vendor/dev.js"></script>
+	
+	<!-- Dev only -->
+	<script src="assets/js/src/vendor/livejs.js"></script>
+	<script src="assets/js/dist/dev.js"></script>
+	<!-- Evasive Software Pty Ltd -->
 </body>
 </html>

@@ -1,6 +1,6 @@
 ##Usage
 
-```
-./install
-./launch
+```bash
+./install.sh
+./dev.sh
 ```
