@@ -5,10 +5,13 @@ const browserify = require('gulp-browserify');
 const autoprefixer = require('gulp-autoprefixer');
 const uglify = require('gulp-uglify');
 const babel = require('gulp-babel');
+const fileinclude = require('gulp-file-include');
 
 gulp.task('default', () => {
 	gulp.watch('./assets/scss/**/*.scss', ['sass']);
 	gulp.watch('./assets/js/src/**/*.js', ['js']);
+	gulp.watch('./src/**/*.html', ['fileinclude']);
+	gulp.watch('./src/*.html', ['fileinclude']);
 });
 
 gulp.task('sass', () => {
@@ -18,7 +21,7 @@ gulp.task('sass', () => {
 		.pipe(autoprefixer({
 			browsers: ['last 50 versions'],
 			cascade: false
-		}))	
+		}))
 		.pipe(sourcemaps.write('./sourcemaps'))
 		.pipe(gulp.dest('./assets/css'));
 });
@@ -30,7 +33,7 @@ gulp.task('js', () => {
 			browserify({
 				insertGlobals : true,
 				debug : !gulp.env.production
-			})	
+			})
 		)
 		.pipe(babel({
 			presets: ["es2015"]
@@ -40,3 +43,11 @@ gulp.task('js', () => {
 		.pipe(gulp.dest('./assets/js/dist'));
 });
 
+gulp.task('fileinclude', function() {
+  gulp.src(['src/index.html'])
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest('./'));
+});
